@@ -1,2 +1,2 @@
 # Enter script code
-keyboard.send_key("<down>", 10)
+keyboard.send_key("<left>", 10)
