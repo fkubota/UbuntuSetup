@@ -8,5 +8,6 @@ function fish_user_key_bindings
 end
 
 # color 
-set fish_color_command '#DF5'
-set fish_color_param '#DDD'
+set fish_color_command '#A0DDFF'
+set fish_color_param '#FFAA55'
+set fish_color_autosuggestion '#999999'
