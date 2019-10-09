@@ -39,7 +39,7 @@ function fish_prompt
   # Terminate with a nice prompt char
   echo -e ''
   # Display current time
-  echo -e -s $gray '[' $green (whoami) '@' (hostname) ' ' $gray'] ' $normal
+  echo -e -s $gray '[' $green (whoami) '@' (hostname) $gray'] ' $normal
   # Print pwd or full path
   echo -n $cwd $normal
 
@@ -61,5 +61,5 @@ function fish_prompt
   end
 
   echo -e ''
-  echo -e -n -s $prompt_color '⋊ > ' $normal
+  echo -e -n -s $prompt_color '⋊  ' $normal
 end
