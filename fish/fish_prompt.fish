@@ -1,6 +1,5 @@
 # name: creeonix
 # ---------------
-# これを参考にした: https://github.com/creeonix/fish-theme/blob/master/fish_prompt.fish
 # Based on crearance. Display the following bits on the left:
 # - Virtualenv name (if applicable, see https://github.com/adambrenecki/virtualfish)
 # - Current directory name
@@ -32,14 +31,17 @@ function fish_prompt
   # Add a newline before new prompts
   echo -e ''
 
-  # Print pwd or full path
-  echo -n -s $cwd $normal
-
   # Display [venvname] if in a virtualenv
   if set -q VIRTUAL_ENV
       echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
   end
 
+  # Terminate with a nice prompt char
+  echo -e ''
+  # Display current time
+  echo -e -s $gray '[' $green (whoami) '@' (hostname) ' ' $gray'] ' $normal
+  # Print pwd or full path
+  echo -n $cwd $normal
 
   # Show git branch and status
   if [ (_git_branch_name) ]
@@ -58,10 +60,6 @@ function fish_prompt
     set prompt_color $normal
   end
 
-  # Display current time
-  echo -n -s $gray '[' $green (whoami) '@' (hostname) ' ' $gray(date "+%H:%M:%S") '] ' $normal
-  echo -e -n -s $prompt_color '⟩ ' $normal
   echo -e ''
-  echo 
-
+  echo -e -n -s $prompt_color '⋊ > ' $normal
 end
