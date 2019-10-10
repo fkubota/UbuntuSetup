@@ -62,7 +62,7 @@ function fish_prompt
 
   echo -e ''
   # vim
-    if test -z (string match -ri '^no|false|0$' $tomita_vi_mode)
+#    if test -z (string match -ri '^no|false|0$' $tomita_vi_mode)
     printf '['
     switch $fish_bind_mode
       case default
@@ -77,7 +77,7 @@ function fish_prompt
     end
     set_color normal
     printf '] '
-  end
+#  end
 
   # fish icon
   echo -e -n -s $prompt_color '⋊  ' $normal
