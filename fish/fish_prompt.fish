@@ -29,7 +29,7 @@ function fish_prompt
   # Output the prompt, left to right
 
   # Add a newline before new prompts
-  echo -e ''
+  #echo -e ''
 
   # Display [venvname] if in a virtualenv
   if set -q VIRTUAL_ENV
@@ -61,5 +61,24 @@ function fish_prompt
   end
 
   echo -e ''
+  # vim
+    if test -z (string match -ri '^no|false|0$' $tomita_vi_mode)
+    printf '['
+    switch $fish_bind_mode
+      case default
+        set_color --bold red
+        printf 'N'
+      case insert
+        set_color --bold green
+        printf 'I'
+      case visual
+        set_color --bold magenta
+        printf 'N'
+    end
+    set_color normal
+    printf '] '
+  end
+
+  # fish icon
   echo -e -n -s $prompt_color '⋊  ' $normal
 end

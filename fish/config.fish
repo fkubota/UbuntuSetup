@@ -1,4 +1,3 @@
-fish_vi_key_bindings
 alias cl="xclip -in -sel clip"
 alias rl="readlink -f"
 
@@ -11,3 +10,8 @@ end
 set fish_color_command '#A0DDFF'
 set fish_color_param '#FFAA55'
 set fish_color_autosuggestion '#999999'
+
+# vim 
+fish_vi_key_bindings
+function fish_mode_prompt
+end
