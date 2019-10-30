@@ -15,3 +15,11 @@ set fish_color_autosuggestion '#999999'
 fish_vi_key_bindings
 function fish_mode_prompt
 end
+
+# autojump
+begin
+    set --local AUTOJUMP_PATH $HOME/.autojump/share/autojump/autojump.fish
+    if test -e $AUTOJUMP_PATH
+        source $AUTOJUMP_PATH
+    end
+end
